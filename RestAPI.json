@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "SalesDesk RestApi",
-    "version": "0.1",
+    "version": "0.2",
     "description": "The Rest API for accessing SalesDesk services",
     "termsOfService": "https://salesdesk.app/terms/",
     "contact": {
