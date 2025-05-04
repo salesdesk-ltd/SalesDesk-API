@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "SalesDesk RestApi 1.0",
+    "title": "SalesDesk RestApi",
     "version": "0.1",
     "description": "The Rest API for accessing SalesDesk services",
     "termsOfService": "https://salesdesk.app/terms/",
@@ -14,16 +14,10 @@
       "get": {
         "operationId": "getMyLoginChoices",
         "summary": "Returns the authenticated user's list of tenants to log in to",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyLoginChoices.Alias}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyLoginChoices.Alias}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -33,16 +27,10 @@
       "get": {
         "operationId": "getMyClaims",
         "summary": "Returns the Claims for the authenticated User",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyClaims.Alias}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyClaims.Alias}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -52,16 +40,10 @@
       "get": {
         "operationId": "getMyChimeCredentials",
         "summary": "Returns the Credentials to connect to Chime",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyChimeCredentials.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyChimeCredentials.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -84,16 +66,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyChimeChannelReadonlyCredentials.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyChimeChannelReadonlyCredentials.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -103,16 +79,10 @@
       "post": {
         "operationId": "postRole",
         "summary": "Create Role",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostRole.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostRole.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -120,22 +90,16 @@
       "get": {
         "operationId": "getRoles",
         "summary": "Get Roles",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetRoles.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetRoles.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
       }
     },
-    "/roles/{roleId}": {
+    "roles/{roleId}": {
       "get": {
         "operationId": "getRole",
         "summary": "Get Role",
@@ -151,16 +115,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetRole.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetRole.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -180,16 +138,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchRole.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchRole.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -209,16 +161,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteRole.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteRole.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -242,16 +188,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostResendInvitation.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostResendInvitation.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -275,16 +215,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetUserLastActive.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetUserLastActive.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -294,16 +228,10 @@
       "post": {
         "operationId": "postObjectAssociation",
         "summary": "Post Object Association",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostObjectAssociation.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostObjectAssociation.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -325,16 +253,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchObjectAssociation.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchObjectAssociation.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -354,16 +276,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteObjectAssociation.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteObjectAssociation.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -385,16 +301,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetComments.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetComments.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -414,16 +324,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostComment.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostComment.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -455,16 +359,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetComments.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetComments.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -494,16 +392,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostComment.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostComment.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -535,16 +427,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetComment.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetComment.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -574,16 +460,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteComment.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteComment.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -613,16 +493,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutComment.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutComment.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -654,16 +528,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostCommentResolve.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostCommentResolve.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -705,16 +573,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetComment.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetComment.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -754,16 +616,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteComment.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteComment.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -803,16 +659,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutComment.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutComment.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -854,16 +704,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostCommentResolve.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostCommentResolve.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -905,16 +749,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyCommentReaction.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyCommentReaction.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -954,16 +792,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyCommentReaction.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyCommentReaction.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1015,16 +847,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyCommentReaction.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyCommentReaction.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1074,16 +900,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyCommentReaction.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyCommentReaction.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1105,16 +925,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetNotes.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetNotes.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1134,16 +948,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostNote.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostNote.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1175,16 +983,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetNotes.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetNotes.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1214,16 +1016,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostNote.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostNote.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1255,16 +1051,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetNote.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetNote.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1294,16 +1084,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteNote.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteNote.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1333,16 +1117,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutNote.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutNote.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1384,16 +1162,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetNote.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetNote.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1433,16 +1205,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteNote.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteNote.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1482,16 +1248,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutNote.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutNote.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1533,16 +1293,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyNoteReaction.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyNoteReaction.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1582,16 +1336,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyNoteReaction.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyNoteReaction.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1643,16 +1391,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyNoteReaction.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyNoteReaction.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1702,16 +1444,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyNoteReaction.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyNoteReaction.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1733,16 +1469,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetCharts.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetCharts.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1752,16 +1482,10 @@
       "post": {
         "operationId": "postChartPreview",
         "summary": "Get preview of the chart's data",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostChartPreview.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostChartPreview.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1771,16 +1495,10 @@
       "put": {
         "operationId": "putRecordAssociation",
         "summary": "Create Record Association",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutRecordAssociation.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutRecordAssociation.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1788,16 +1506,10 @@
       "delete": {
         "operationId": "deleteRecordAssociation",
         "summary": "Delete Record Association",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteRecordAssociation.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteRecordAssociation.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1819,16 +1531,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutRecordAssociation.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutRecordAssociation.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1848,16 +1554,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteRecordAssociation.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteRecordAssociation.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1867,16 +1567,10 @@
       "put": {
         "operationId": "putRecordAssociations",
         "summary": "Create Record Associations",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutRecordAssociations.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutRecordAssociations.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1898,16 +1592,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutRecordAssociations.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutRecordAssociations.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1929,16 +1617,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostLeadConvert.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostLeadConvert.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -1960,16 +1642,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostDocConvertToPdfAsset.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostDocConvertToPdfAsset.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2001,16 +1677,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostDocConvertToPdfAsset.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostDocConvertToPdfAsset.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2032,16 +1702,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetConferenceLiveParticipants.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetConferenceLiveParticipants.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2063,16 +1727,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetConferenceUsers.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetConferenceUsers.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2094,16 +1752,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetConferenceRoom.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetConferenceRoom.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2125,16 +1777,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostConferenceRecordingStatus.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostConferenceRecordingStatus.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2156,16 +1802,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetChatMessages.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetChatMessages.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2185,16 +1825,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostChatMessage.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostChatMessage.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2204,16 +1838,10 @@
       "post": {
         "operationId": "convertHtmlToPdf",
         "summary": "Return Pdf Signed URL for provided HTML",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostConvertHtmlToPdf.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostConvertHtmlToPdf.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2235,16 +1863,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetFile.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetFile.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2254,16 +1876,10 @@
       "post": {
         "operationId": "Start File Upload",
         "summary": "Create a file and receive a signed URL for uploading content",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostFile.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostFile.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2273,16 +1889,10 @@
       "post": {
         "operationId": "mfa",
         "summary": "Configure MFA",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostMyMfa.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostMyMfa.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2292,16 +1902,10 @@
       "get": {
         "operationId": "getMyAppState",
         "summary": "Get My App State",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyAppState.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyAppState.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2309,16 +1913,10 @@
       "patch": {
         "operationId": "patchMyAppState",
         "summary": "Update My App State",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchMyAppState.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchMyAppState.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2328,16 +1926,10 @@
       "get": {
         "operationId": "getMyPreferences",
         "summary": "Get My Preferences",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyPreferences.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyPreferences.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2345,16 +1937,10 @@
       "patch": {
         "operationId": "patchMyPreferences",
         "summary": "Update My Preferences",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchMyPreferences.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchMyPreferences.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2362,16 +1948,10 @@
       "delete": {
         "operationId": "deleteMyPreferences",
         "summary": "Delete My Preferences",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyPreferences.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyPreferences.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2381,16 +1961,10 @@
       "get": {
         "operationId": "getMyBookmarks",
         "summary": "Get My Bookmarks",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyBookmarks.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyBookmarks.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2398,16 +1972,10 @@
       "post": {
         "operationId": "postMyBookmark",
         "summary": "Create Bookmark",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostMyBookmark.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostMyBookmark.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2431,16 +1999,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyBookmark.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyBookmark.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2462,16 +2024,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyBookmark.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyBookmark.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2493,16 +2049,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyBookmark.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyBookmark.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2512,16 +2062,10 @@
       "get": {
         "operationId": "getFavorites",
         "summary": "Get Favorites",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyFavorites.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyFavorites.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2541,16 +2085,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyFavorites.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyFavorites.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2572,16 +2110,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyFavorite.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyFavorite.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2601,22 +2133,16 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyFavorite.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyFavorite.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
       }
     },
-    "/workspaces/{workspaceId}/me/records/favorites/{recordId}": {
+    "workspaces/{workspaceId}/me/records/favorites/{recordId}": {
       "put": {
         "operationId": "putFavoriteWorkspace",
         "summary": "Put Favorite for workspace",
@@ -2642,16 +2168,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyFavorite.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyFavorite.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2681,16 +2201,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyFavorite.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyFavorite.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2712,22 +2226,16 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyFavorites.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyFavorites.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
       }
     },
-    "/workspaces/{workspaceId}/me/records/favorites/batch": {
+    "workspaces/{workspaceId}/me/records/favorites/batch": {
       "put": {
         "operationId": "putFavoritesWorkspace",
         "summary": "Put Favorites for workspace",
@@ -2743,16 +2251,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyFavorites.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyFavorites.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2787,16 +2289,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetObjects.Alias}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetObjects.Alias}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2804,16 +2300,10 @@
       "post": {
         "operationId": "postObject",
         "summary": "Create Object",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostObject.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostObject.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2835,16 +2325,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetObject.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetObject.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2864,16 +2348,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteObject.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteObject.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2905,16 +2383,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutObject.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutObject.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2936,16 +2408,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetObjectAssociations.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetObjectAssociations.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -2967,16 +2433,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostRecord.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostRecord.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3006,16 +2466,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteRecords.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteRecords.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3037,16 +2491,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetRecords.Alias}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetRecords.Alias}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3054,16 +2502,10 @@
       "post": {
         "operationId": "postRecord",
         "summary": "Create Record",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostRecord.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostRecord.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3083,16 +2525,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteRecords.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteRecords.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3114,16 +2550,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetRecord.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetRecord.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3131,16 +2561,10 @@
       "patch": {
         "operationId": "patchRecord",
         "summary": "Patch Record",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchRecord.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchRecord.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3160,16 +2584,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteRecord.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteRecord.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3191,16 +2609,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchRecord.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchRecord.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3230,16 +2642,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteRecord.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteRecord.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3249,16 +2655,10 @@
       "post": {
         "operationId": "postRecordDuplicate",
         "summary": "Duplicate a record",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostRecordDuplicate.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostRecordDuplicate.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3268,16 +2668,10 @@
       "post": {
         "operationId": "postRecordDuplicateWorkspace",
         "summary": "Duplicate a record for workspace",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostRecordDuplicate.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostRecordDuplicate.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3287,16 +2681,10 @@
       "post": {
         "operationId": "postRecords",
         "summary": "Create Records",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostRecords.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostRecords.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3304,16 +2692,10 @@
       "patch": {
         "operationId": "patchRecords",
         "summary": "Patch Records",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchRecords.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchRecords.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3335,16 +2717,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostRecords.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostRecords.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3364,16 +2740,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchRecords.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchRecords.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3395,16 +2765,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetRecordAuthorizedUsers.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetRecordAuthorizedUsers.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3414,16 +2778,10 @@
       "post": {
         "operationId": "searchRecords",
         "summary": "Search Records",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${SearchRecords.Alias}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${SearchRecords.Alias}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3433,16 +2791,10 @@
       "post": {
         "operationId": "searchRecordsAssociationsSummary",
         "summary": "Search associations",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${SearchAssociations.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${SearchAssociations.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3464,22 +2816,16 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${SearchAssociations.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${SearchAssociations.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
       }
     },
-    "/records/{recordId}/shared/workspaces/{workspaceId}": {
+    "records/{recordId}/shared/workspaces/{workspaceId}": {
       "put": {
         "operationId": "putSharedWorkspaceRecord",
         "summary": "Share a workspace record",
@@ -3505,16 +2851,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutSharedWorkspaceRecord.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutSharedWorkspaceRecord.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3544,22 +2884,16 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteSharedWorkspaceRecord.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteSharedWorkspaceRecord.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
       }
     },
-    "/records/batch/shared/workspaces/{workspaceId}": {
+    "records/batch/shared/workspaces/{workspaceId}": {
       "put": {
         "operationId": "putSharedWorkspaceRecords",
         "summary": "Share workspace records",
@@ -3575,16 +2909,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutSharedWorkspaceRecords.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutSharedWorkspaceRecords.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3594,16 +2922,10 @@
       "get": {
         "operationId": "getWatches",
         "summary": "Get Watches",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyWatches.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyWatches.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3623,16 +2945,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyWatches.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyWatches.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3664,16 +2980,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyWatches.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyWatches.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3695,16 +3005,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyWatch.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyWatch.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3724,16 +3028,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyWatch.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyWatch.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3753,16 +3051,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyWatch.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyWatch.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3794,16 +3086,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyWatch.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyWatch.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3833,16 +3119,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyWatch.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyWatch.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3852,16 +3132,10 @@
       "put": {
         "operationId": "putWatches",
         "summary": "Put Watches",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyWatches.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyWatches.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3871,35 +3145,23 @@
       "put": {
         "operationId": "putWatchesForWorkspace",
         "summary": "Put Watches For Workspace",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyWatches.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyWatches.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
       }
     },
-    "/me/notifications/settings/rules": {
+    "me/notifications/settings/rules": {
       "get": {
         "operationId": "GetMyNotificationRules",
         "summary": "Get my notifications rules",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyNotificationRules.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyNotificationRules.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3907,16 +3169,10 @@
       "post": {
         "operationId": "postMyNotificationRule",
         "summary": "Create Notification Rule",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostMyNotificationRule.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostMyNotificationRule.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3938,16 +3194,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyNotificationRule.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyNotificationRule.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3967,16 +3217,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyNotificationRule.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyNotificationRule.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -3986,16 +3230,10 @@
       "get": {
         "operationId": "GetMyNotifications",
         "summary": "Get my notifications",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyNotifications.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyNotifications.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4005,16 +3243,10 @@
       "put": {
         "operationId": "MarkMyNotificationsRead",
         "summary": "Mark my notifications as read",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyNotificationsRead.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyNotificationsRead.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4024,16 +3256,10 @@
       "get": {
         "operationId": "GetMyUnreadNotifications",
         "summary": "Get my unread notifications",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyUnreadNotifications.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyUnreadNotifications.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4041,16 +3267,10 @@
       "put": {
         "operationId": "MarkMyNotificationsUnread",
         "summary": "Mark my notifications as unread",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyNotificationsUnread.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyNotificationsUnread.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4060,16 +3280,10 @@
       "get": {
         "operationId": "GetMyNewNotificationsCount",
         "summary": "Get my new notifications count",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyNewNotificationsCount.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyNewNotificationsCount.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4079,16 +3293,10 @@
       "put": {
         "operationId": "ResetMyNewNotificationsCount",
         "summary": "Reset my new notifications count",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${ResetMyNewNotificationsCount.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${ResetMyNewNotificationsCount.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4098,16 +3306,10 @@
       "get": {
         "operationId": "Get Events",
         "summary": "Get History",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetEvents.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetEvents.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4115,22 +3317,16 @@
       "post": {
         "operationId": "events",
         "summary": "Post Events",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostEvent.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostEvent.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
       }
     },
-    "/workspaces/{workspaceId}/events": {
+    "workspaces/{workspaceId}/events": {
       "get": {
         "operationId": "Get Events Workspace",
         "summary": "Get History for workspace",
@@ -4146,16 +3342,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetEvents.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetEvents.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4175,16 +3365,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostEvent.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostEvent.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4194,16 +3378,10 @@
       "get": {
         "operationId": "getEventsSummary",
         "summary": "Get Events Summary",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetEventsSummary.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetEventsSummary.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4225,16 +3403,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetEventsSummary.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetEventsSummary.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4244,16 +3416,10 @@
       "post": {
         "operationId": "grantAccess",
         "summary": "Grant access",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostGrantUserAccess.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostGrantUserAccess.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4263,16 +3429,10 @@
       "get": {
         "operationId": "getTenantSettings",
         "summary": "Get Tenant Settings",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetTenantSettings.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetTenantSettings.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4280,16 +3440,10 @@
       "patch": {
         "operationId": "patchTenantSettings",
         "summary": "Update Tenant Settings",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchTenantSettings.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchTenantSettings.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4299,16 +3453,10 @@
       "post": {
         "operationId": "postImport",
         "summary": "Post Import",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostImport.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostImport.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4330,16 +3478,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetImportMappings.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetImportMappings.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4361,16 +3503,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostImportJob.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostImportJob.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4402,16 +3538,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetImportJob.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetImportJob.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4470,16 +3600,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyImportJobs.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyImportJobs.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4522,16 +3646,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyImportJobs.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyImportJobs.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4553,16 +3671,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostGetImportPreview.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostGetImportPreview.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4572,16 +3684,10 @@
       "get": {
         "operationId": "getMyApiKeys",
         "summary": "Returns the authenticated user's list of API keys",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyApiKeys.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyApiKeys.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4589,16 +3695,10 @@
       "post": {
         "operationId": "postMyApiKey",
         "summary": "Create a SalesDesk API key",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostMyApiKey.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostMyApiKey.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4620,16 +3720,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchMyApiKey.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchMyApiKey.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4648,16 +3742,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyApiKey.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyApiKey.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4667,16 +3755,10 @@
       "get": {
         "operationId": "getMyGoogleAccessToken",
         "summary": "Get access token for Google integration",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyGoogleAccessToken.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyGoogleAccessToken.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4684,16 +3766,10 @@
       "delete": {
         "operationId": "deleteMyGoogleLogin",
         "summary": "Log out of Google",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyGoogleLogin.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyGoogleLogin.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4703,16 +3779,10 @@
       "get": {
         "operationId": "getZapierEvents",
         "summary": "Returns example events for Zapier",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetZapierEvents.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetZapierEvents.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4722,16 +3792,10 @@
       "get": {
         "operationId": "getZapierEvents",
         "summary": "Returns example events for Zapier",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetZapierNotificationRules.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetZapierNotificationRules.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4741,16 +3805,10 @@
       "post": {
         "operationId": "postZapierSubscribe",
         "summary": "When Zapier subscribes to a notification rule",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostZapierSubscribe.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostZapierSubscribe.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4760,16 +3818,10 @@
       "post": {
         "operationId": "postZapierUnsubscribe",
         "summary": "When Zapier unsubscribes from a notification rule",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostZapierUnsubscribe.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostZapierUnsubscribe.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4779,16 +3831,10 @@
       "get": {
         "operationId": "getSubscriptionPlans",
         "summary": "Get Subscription Plans",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetSubscriptionPlans.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetSubscriptionPlans.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4798,16 +3844,10 @@
       "get": {
         "operationId": "getTenantSubscription",
         "summary": "Gets the tenant subscription",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetTenantSubscription.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetTenantSubscription.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4817,16 +3857,10 @@
       "get": {
         "operationId": "getTenantQuotaUtilization",
         "summary": "Gets the quota utilization for a specific quota",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetTenantQuotaUtilization.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetTenantQuotaUtilization.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4836,16 +3870,10 @@
       "get": {
         "operationId": "getCustomerExists",
         "summary": "Gets whether an email address corresponds to an existing customer",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetCustomerExists.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetCustomerExists.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4867,16 +3895,10 @@
             }
           }
         ],
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostAddCustomerToWorkspace.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostAddCustomerToWorkspace.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4886,16 +3908,10 @@
       "delete": {
         "operationId": "deleteCustomerFromWorkspace",
         "summary": "Remove customer from workspace",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteCustomerFromWorkspace.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteCustomerFromWorkspace.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4905,16 +3921,10 @@
       "get": {
         "operationId": "getAIAgentSettings",
         "summary": "Get AI Agent Settings",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetAIAgentSettings.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetAIAgentSettings.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
@@ -4922,16 +3932,10 @@
       "patch": {
         "operationId": "patchAIAgentSettings",
         "summary": "Update AI Agent Settings",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        },
+        "responses": {},
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": {
-            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchAIAgentSettings.Arn}/invocations"
-          },
+          "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchAIAgentSettings.Arn}/invocations",
           "passthroughBehavior": "when_no_match",
           "type": "aws_proxy"
         }
