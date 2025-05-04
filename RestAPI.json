@@ -63,59 +63,6 @@
         "responses": {}
       }
     },
-    "roles/{roleId}": {
-      "get": {
-        "operationId": "getRole",
-        "summary": "Get Role",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "roleId",
-            "schema": {
-              "title": "Role Id",
-              "description": "Unique system identifier for Roles",
-              "type": "string",
-              "pattern": "^[0-9]*$"
-            }
-          }
-        ],
-        "responses": {}
-      },
-      "patch": {
-        "operationId": "patchRole",
-        "summary": "Patch Role",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "roleId",
-            "schema": {
-              "title": "Role Id",
-              "description": "Unique system identifier for Roles",
-              "type": "string",
-              "pattern": "^[0-9]*$"
-            }
-          }
-        ],
-        "responses": {}
-      },
-      "delete": {
-        "operationId": "deleteRole",
-        "summary": "Delete Role",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "roleId",
-            "schema": {
-              "title": "Role Id",
-              "description": "Unique system identifier for Roles",
-              "type": "string",
-              "pattern": "^[0-9]*$"
-            }
-          }
-        ],
-        "responses": {}
-      }
-    },
     "/users/{username}/resend-invitation": {
       "post": {
         "operationId": "postResendInvitation",
