@@ -1615,62 +1615,6 @@
         "responses": {}
       }
     },
-    "workspaces/{workspaceId}/me/records/favorites/{recordId}": {
-      "put": {
-        "operationId": "putFavoriteWorkspace",
-        "summary": "Put Favorite for workspace",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "workspaceId",
-            "schema": {
-              "title": "SDRecord Id",
-              "description": "Unique system identifier for SDRecords",
-              "type": "string",
-              "pattern": "^[0-9]*$"
-            }
-          },
-          {
-            "in": "path",
-            "name": "recordId",
-            "schema": {
-              "title": "SDRecord Id",
-              "description": "Unique system identifier for SDRecords",
-              "type": "string",
-              "pattern": "^[0-9]*$"
-            }
-          }
-        ],
-        "responses": {}
-      },
-      "delete": {
-        "operationId": "deleteFavoriteWorkspace",
-        "summary": "Delete Favorite for workspace",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "workspaceId",
-            "schema": {
-              "title": "SDRecord Id",
-              "description": "Unique system identifier for SDRecords",
-              "type": "string",
-              "pattern": "^[0-9]*$"
-            }
-          },
-          {
-            "in": "path",
-            "name": "recordId",
-            "schema": {
-              "title": "SDRecord Id",
-              "description": "Unique system identifier for SDRecords",
-              "type": "string",
-              "pattern": "^[0-9]*$"
-            }
-          }
-        ],
-        "responses": {}
-      }
-    },
     "/me/records/favorites/batch": {
       "put": {
         "operationId": "putFavorites",
