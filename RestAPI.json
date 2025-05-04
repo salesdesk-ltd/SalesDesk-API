@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "SalesDesk RestApi",
+    "title": "SalesDesk RestApi 1.0",
     "version": "0.1",
     "description": "The Rest API for accessing SalesDesk services",
     "termsOfService": "https://salesdesk.app/terms/",
@@ -14,7 +14,11 @@
       "get": {
         "operationId": "getMyLoginChoices",
         "summary": "Returns the authenticated user's list of tenants to log in to",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -29,7 +33,11 @@
       "get": {
         "operationId": "getMyClaims",
         "summary": "Returns the Claims for the authenticated User",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -44,7 +52,11 @@
       "get": {
         "operationId": "getMyChimeCredentials",
         "summary": "Returns the Credentials to connect to Chime",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -72,7 +84,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -87,7 +103,11 @@
       "post": {
         "operationId": "postRole",
         "summary": "Create Role",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -100,7 +120,11 @@
       "get": {
         "operationId": "getRoles",
         "summary": "Get Roles",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -111,7 +135,7 @@
         }
       }
     },
-    "roles/{roleId}": {
+    "/roles/{roleId}": {
       "get": {
         "operationId": "getRole",
         "summary": "Get Role",
@@ -127,7 +151,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -152,7 +180,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -177,7 +209,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -206,7 +242,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -235,7 +275,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -250,7 +294,11 @@
       "post": {
         "operationId": "postObjectAssociation",
         "summary": "Post Object Association",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -277,7 +325,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -302,7 +354,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -329,7 +385,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -354,7 +414,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -391,7 +455,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -426,7 +494,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -463,7 +535,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -498,7 +574,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -533,7 +613,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -570,7 +654,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -617,7 +705,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -662,7 +754,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -707,7 +803,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -754,7 +854,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -801,7 +905,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -846,7 +954,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -903,7 +1015,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -958,7 +1074,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -985,7 +1105,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1010,7 +1134,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1047,7 +1175,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1082,7 +1214,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1119,7 +1255,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1154,7 +1294,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1189,7 +1333,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1236,7 +1384,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1281,7 +1433,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1326,7 +1482,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1373,7 +1533,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1418,7 +1582,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1475,7 +1643,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1530,7 +1702,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1557,7 +1733,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1572,7 +1752,11 @@
       "post": {
         "operationId": "postChartPreview",
         "summary": "Get preview of the chart's data",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1587,7 +1771,11 @@
       "put": {
         "operationId": "putRecordAssociation",
         "summary": "Create Record Association",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1600,7 +1788,11 @@
       "delete": {
         "operationId": "deleteRecordAssociation",
         "summary": "Delete Record Association",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1627,7 +1819,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1652,7 +1848,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1667,7 +1867,11 @@
       "put": {
         "operationId": "putRecordAssociations",
         "summary": "Create Record Associations",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1694,7 +1898,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1721,7 +1929,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1748,7 +1960,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1785,7 +2001,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1812,7 +2032,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1839,7 +2063,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1866,7 +2094,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1893,7 +2125,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1920,7 +2156,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1945,7 +2185,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1960,7 +2204,11 @@
       "post": {
         "operationId": "convertHtmlToPdf",
         "summary": "Return Pdf Signed URL for provided HTML",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -1987,7 +2235,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2002,7 +2254,11 @@
       "post": {
         "operationId": "Start File Upload",
         "summary": "Create a file and receive a signed URL for uploading content",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2017,7 +2273,11 @@
       "post": {
         "operationId": "mfa",
         "summary": "Configure MFA",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2032,7 +2292,11 @@
       "get": {
         "operationId": "getMyAppState",
         "summary": "Get My App State",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2045,7 +2309,11 @@
       "patch": {
         "operationId": "patchMyAppState",
         "summary": "Update My App State",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2060,7 +2328,11 @@
       "get": {
         "operationId": "getMyPreferences",
         "summary": "Get My Preferences",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2073,7 +2345,11 @@
       "patch": {
         "operationId": "patchMyPreferences",
         "summary": "Update My Preferences",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2086,7 +2362,11 @@
       "delete": {
         "operationId": "deleteMyPreferences",
         "summary": "Delete My Preferences",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2101,7 +2381,11 @@
       "get": {
         "operationId": "getMyBookmarks",
         "summary": "Get My Bookmarks",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2114,7 +2398,11 @@
       "post": {
         "operationId": "postMyBookmark",
         "summary": "Create Bookmark",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2143,7 +2431,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2170,7 +2462,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2197,7 +2493,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2212,7 +2512,11 @@
       "get": {
         "operationId": "getFavorites",
         "summary": "Get Favorites",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2237,7 +2541,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2264,7 +2572,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2289,7 +2601,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2300,7 +2616,7 @@
         }
       }
     },
-    "workspaces/{workspaceId}/me/records/favorites/{recordId}": {
+    "/workspaces/{workspaceId}/me/records/favorites/{recordId}": {
       "put": {
         "operationId": "putFavoriteWorkspace",
         "summary": "Put Favorite for workspace",
@@ -2326,7 +2642,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2361,7 +2681,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2388,7 +2712,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2399,7 +2727,7 @@
         }
       }
     },
-    "workspaces/{workspaceId}/me/records/favorites/batch": {
+    "/workspaces/{workspaceId}/me/records/favorites/batch": {
       "put": {
         "operationId": "putFavoritesWorkspace",
         "summary": "Put Favorites for workspace",
@@ -2415,7 +2743,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2455,7 +2787,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2468,7 +2804,11 @@
       "post": {
         "operationId": "postObject",
         "summary": "Create Object",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2495,7 +2835,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2520,7 +2864,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2557,7 +2905,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2584,7 +2936,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2611,7 +2967,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2646,7 +3006,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2673,7 +3037,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2686,7 +3054,11 @@
       "post": {
         "operationId": "postRecord",
         "summary": "Create Record",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2711,7 +3083,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2738,7 +3114,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2751,7 +3131,11 @@
       "patch": {
         "operationId": "patchRecord",
         "summary": "Patch Record",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2776,7 +3160,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2803,7 +3191,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2838,7 +3230,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2853,7 +3249,11 @@
       "post": {
         "operationId": "postRecordDuplicate",
         "summary": "Duplicate a record",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2868,7 +3268,11 @@
       "post": {
         "operationId": "postRecordDuplicateWorkspace",
         "summary": "Duplicate a record for workspace",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2883,7 +3287,11 @@
       "post": {
         "operationId": "postRecords",
         "summary": "Create Records",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2896,7 +3304,11 @@
       "patch": {
         "operationId": "patchRecords",
         "summary": "Patch Records",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2923,7 +3335,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2948,7 +3364,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2975,7 +3395,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -2990,7 +3414,11 @@
       "post": {
         "operationId": "searchRecords",
         "summary": "Search Records",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3005,7 +3433,11 @@
       "post": {
         "operationId": "searchRecordsAssociationsSummary",
         "summary": "Search associations",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3032,7 +3464,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3043,7 +3479,7 @@
         }
       }
     },
-    "records/{recordId}/shared/workspaces/{workspaceId}": {
+    "/records/{recordId}/shared/workspaces/{workspaceId}": {
       "put": {
         "operationId": "putSharedWorkspaceRecord",
         "summary": "Share a workspace record",
@@ -3069,7 +3505,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3104,7 +3544,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3115,7 +3559,7 @@
         }
       }
     },
-    "records/batch/shared/workspaces/{workspaceId}": {
+    "/records/batch/shared/workspaces/{workspaceId}": {
       "put": {
         "operationId": "putSharedWorkspaceRecords",
         "summary": "Share workspace records",
@@ -3131,7 +3575,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3146,7 +3594,11 @@
       "get": {
         "operationId": "getWatches",
         "summary": "Get Watches",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3171,7 +3623,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3208,7 +3664,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3235,7 +3695,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3260,7 +3724,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3285,7 +3753,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3322,7 +3794,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3357,7 +3833,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3372,7 +3852,11 @@
       "put": {
         "operationId": "putWatches",
         "summary": "Put Watches",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3387,7 +3871,11 @@
       "put": {
         "operationId": "putWatchesForWorkspace",
         "summary": "Put Watches For Workspace",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3398,11 +3886,15 @@
         }
       }
     },
-    "me/notifications/settings/rules": {
+    "/me/notifications/settings/rules": {
       "get": {
         "operationId": "GetMyNotificationRules",
         "summary": "Get my notifications rules",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3415,7 +3907,11 @@
       "post": {
         "operationId": "postMyNotificationRule",
         "summary": "Create Notification Rule",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3442,7 +3938,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3467,7 +3967,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3482,7 +3986,11 @@
       "get": {
         "operationId": "GetMyNotifications",
         "summary": "Get my notifications",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3497,7 +4005,11 @@
       "put": {
         "operationId": "MarkMyNotificationsRead",
         "summary": "Mark my notifications as read",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3512,7 +4024,11 @@
       "get": {
         "operationId": "GetMyUnreadNotifications",
         "summary": "Get my unread notifications",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3525,7 +4041,11 @@
       "put": {
         "operationId": "MarkMyNotificationsUnread",
         "summary": "Mark my notifications as unread",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3540,7 +4060,11 @@
       "get": {
         "operationId": "GetMyNewNotificationsCount",
         "summary": "Get my new notifications count",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3555,7 +4079,11 @@
       "put": {
         "operationId": "ResetMyNewNotificationsCount",
         "summary": "Reset my new notifications count",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3570,7 +4098,11 @@
       "get": {
         "operationId": "Get Events",
         "summary": "Get History",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3583,7 +4115,11 @@
       "post": {
         "operationId": "events",
         "summary": "Post Events",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3594,7 +4130,7 @@
         }
       }
     },
-    "workspaces/{workspaceId}/events": {
+    "/workspaces/{workspaceId}/events": {
       "get": {
         "operationId": "Get Events Workspace",
         "summary": "Get History for workspace",
@@ -3610,7 +4146,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3635,7 +4175,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3650,7 +4194,11 @@
       "get": {
         "operationId": "getEventsSummary",
         "summary": "Get Events Summary",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3677,7 +4225,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3692,7 +4244,11 @@
       "post": {
         "operationId": "grantAccess",
         "summary": "Grant access",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3707,7 +4263,11 @@
       "get": {
         "operationId": "getTenantSettings",
         "summary": "Get Tenant Settings",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3720,7 +4280,11 @@
       "patch": {
         "operationId": "patchTenantSettings",
         "summary": "Update Tenant Settings",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3735,7 +4299,11 @@
       "post": {
         "operationId": "postImport",
         "summary": "Post Import",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3762,7 +4330,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3789,7 +4361,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3826,7 +4402,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3890,7 +4470,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3938,7 +4522,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3965,7 +4553,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3980,7 +4572,11 @@
       "get": {
         "operationId": "getMyApiKeys",
         "summary": "Returns the authenticated user's list of API keys",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -3993,7 +4589,11 @@
       "post": {
         "operationId": "postMyApiKey",
         "summary": "Create a SalesDesk API key",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -4020,7 +4620,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -4044,7 +4648,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -4059,7 +4667,11 @@
       "get": {
         "operationId": "getMyGoogleAccessToken",
         "summary": "Get access token for Google integration",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -4072,7 +4684,11 @@
       "delete": {
         "operationId": "deleteMyGoogleLogin",
         "summary": "Log out of Google",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -4087,7 +4703,11 @@
       "get": {
         "operationId": "getZapierEvents",
         "summary": "Returns example events for Zapier",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -4102,7 +4722,11 @@
       "get": {
         "operationId": "getZapierEvents",
         "summary": "Returns example events for Zapier",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -4117,7 +4741,11 @@
       "post": {
         "operationId": "postZapierSubscribe",
         "summary": "When Zapier subscribes to a notification rule",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -4132,7 +4760,11 @@
       "post": {
         "operationId": "postZapierUnsubscribe",
         "summary": "When Zapier unsubscribes from a notification rule",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -4147,7 +4779,11 @@
       "get": {
         "operationId": "getSubscriptionPlans",
         "summary": "Get Subscription Plans",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -4162,7 +4798,11 @@
       "get": {
         "operationId": "getTenantSubscription",
         "summary": "Gets the tenant subscription",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -4177,7 +4817,11 @@
       "get": {
         "operationId": "getTenantQuotaUtilization",
         "summary": "Gets the quota utilization for a specific quota",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -4192,7 +4836,11 @@
       "get": {
         "operationId": "getCustomerExists",
         "summary": "Gets whether an email address corresponds to an existing customer",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -4219,7 +4867,11 @@
             }
           }
         ],
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -4234,7 +4886,11 @@
       "delete": {
         "operationId": "deleteCustomerFromWorkspace",
         "summary": "Remove customer from workspace",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -4249,7 +4905,11 @@
       "get": {
         "operationId": "getAIAgentSettings",
         "summary": "Get AI Agent Settings",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
@@ -4262,7 +4922,11 @@
       "patch": {
         "operationId": "patchAIAgentSettings",
         "summary": "Update AI Agent Settings",
-        "responses": {},
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
           "uri": {
