@@ -1,0 +1,4280 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "SalesDesk RestApi",
+    "version": "0.1",
+    "description": "The Rest API for accessing SalesDesk services",
+    "termsOfService": "https://salesdesk.app/terms/",
+    "contact": {
+      "email": "support@salesdesk.app"
+    }
+  },
+  "paths": {
+    "/me/login-choice": {
+      "get": {
+        "operationId": "getMyLoginChoices",
+        "summary": "Returns the authenticated user's list of tenants to log in to",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyLoginChoices.Alias}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/claims": {
+      "get": {
+        "operationId": "getMyClaims",
+        "summary": "Returns the Claims for the authenticated User",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyClaims.Alias}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/chime/credentials": {
+      "get": {
+        "operationId": "getMyChimeCredentials",
+        "summary": "Returns the Credentials to connect to Chime",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyChimeCredentials.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/chime/credentials/readonly/channel/{channelId}": {
+      "get": {
+        "operationId": "getMyChimeChannelReadonlyCredentials",
+        "summary": "Returns readonly Credentials to connect to Chime channel",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "channelId",
+            "schema": {
+              "title": "String",
+              "type": "string",
+              "nullable": false,
+              "minLength": 1,
+              "maxLength": 10000
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyChimeChannelReadonlyCredentials.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/roles": {
+      "post": {
+        "operationId": "postRole",
+        "summary": "Create Role",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostRole.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "get": {
+        "operationId": "getRoles",
+        "summary": "Get Roles",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetRoles.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "roles/{roleId}": {
+      "get": {
+        "operationId": "getRole",
+        "summary": "Get Role",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "roleId",
+            "schema": {
+              "title": "Role Id",
+              "description": "Unique system identifier for Roles",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetRole.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "patch": {
+        "operationId": "patchRole",
+        "summary": "Patch Role",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "roleId",
+            "schema": {
+              "title": "Role Id",
+              "description": "Unique system identifier for Roles",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchRole.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteRole",
+        "summary": "Delete Role",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "roleId",
+            "schema": {
+              "title": "Role Id",
+              "description": "Unique system identifier for Roles",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteRole.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/users/{username}/resend-invitation": {
+      "post": {
+        "operationId": "postResendInvitation",
+        "summary": "Resend Invitation",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "username",
+            "schema": {
+              "title": "Username",
+              "type": "string",
+              "nullable": false,
+              "minLength": 1,
+              "maxLength": 10000,
+              "description": "Unique system identifier for Users"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostResendInvitation.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/users/{username}/last-active": {
+      "get": {
+        "operationId": "getUserLastActive",
+        "summary": "Get timestamp when user was last active",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "username",
+            "schema": {
+              "title": "Username",
+              "type": "string",
+              "nullable": false,
+              "minLength": 1,
+              "maxLength": 10000,
+              "description": "Unique system identifier for Users"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetUserLastActive.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/objects/associations": {
+      "post": {
+        "operationId": "postObjectAssociation",
+        "summary": "Post Object Association",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostObjectAssociation.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/objects/associations/{objectAssociationId}": {
+      "patch": {
+        "operationId": "patchObjectAssociation",
+        "summary": "Patch Object Association",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "objectAssociationId",
+            "schema": {
+              "title": "Association Definition ID",
+              "description": "ID of association definition to delete",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchObjectAssociation.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteObjectAssociation",
+        "summary": "Delete Association Definition",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "objectAssociationId",
+            "schema": {
+              "title": "Association Definition ID",
+              "description": "ID of association definition to delete",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteObjectAssociation.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/records/{recordId}/comments": {
+      "get": {
+        "operationId": "getComments",
+        "summary": "Get Comments",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetComments.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "post": {
+        "operationId": "postComment",
+        "summary": "Post Comment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostComment.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/records/{recordId}/comments": {
+      "get": {
+        "operationId": "getCommentsWorkspace",
+        "summary": "Get Comments for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetComments.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "post": {
+        "operationId": "postCommentWorkspace",
+        "summary": "Post Comment for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostComment.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/records/{recordId}/comments/{commentId}": {
+      "get": {
+        "operationId": "getComment",
+        "summary": "Get Comment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "commentId",
+            "schema": {
+              "title": "Comment Id",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetComment.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteComment",
+        "summary": "Delete Comment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "commentId",
+            "schema": {
+              "title": "Ulid",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteComment.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "put": {
+        "operationId": "putComment",
+        "summary": "Put Comment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "commentId",
+            "schema": {
+              "title": "Ulid",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutComment.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/records/{recordId}/comments/{commentId}/resolve": {
+      "post": {
+        "operationId": "postCommentResolve",
+        "summary": "Resolve Comment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "commentId",
+            "schema": {
+              "title": "Ulid",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostCommentResolve.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/records/{recordId}/comments/{commentId}": {
+      "get": {
+        "operationId": "getCommentWorkspace",
+        "summary": "Get Comment in workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "commentId",
+            "schema": {
+              "title": "Comment Id",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetComment.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteCommentWorkspace",
+        "summary": "Delete Comment in workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "commentId",
+            "schema": {
+              "title": "Ulid",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteComment.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "put": {
+        "operationId": "putCommentWorkspace",
+        "summary": "Put Comment in workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "commentId",
+            "schema": {
+              "title": "Ulid",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutComment.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/records/{recordId}/comments/{commentId}/resolve": {
+      "post": {
+        "operationId": "postCommentResolveWorkspace",
+        "summary": "Resolve Comment in workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "commentId",
+            "schema": {
+              "title": "Ulid",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostCommentResolve.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/records/{recordId}/comments/{commentId}/reactions/me/{emoji}": {
+      "put": {
+        "operationId": "putMyCommentReaction",
+        "summary": "Put my reaction to a comment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "commentId",
+            "schema": {
+              "title": "Comment Id",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "emoji",
+            "schema": {
+              "type": "string",
+              "description": "A single emoji",
+              "maxLength": 20,
+              "pattern": "\\p{Extended_Pictographic}"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyCommentReaction.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteMyCommentReaction",
+        "summary": "Delete my reaction to a comment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "commentId",
+            "schema": {
+              "title": "Comment Id",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "emoji",
+            "schema": {
+              "type": "string",
+              "description": "A single emoji",
+              "maxLength": 20,
+              "pattern": "\\p{Extended_Pictographic}"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyCommentReaction.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/records/{recordId}/comments/{commentId}/reactions/me/{emoji}": {
+      "put": {
+        "operationId": "putMyCommentReactionWorkspace",
+        "summary": "Put my reaction to a comment for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "commentId",
+            "schema": {
+              "title": "Comment Id",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "emoji",
+            "schema": {
+              "type": "string",
+              "description": "A single emoji",
+              "maxLength": 20,
+              "pattern": "\\p{Extended_Pictographic}"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyCommentReaction.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteMyCommentReactionWorkspace",
+        "summary": "Delete my reaction to a comment for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "commentId",
+            "schema": {
+              "title": "Comment Id",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "emoji",
+            "schema": {
+              "type": "string",
+              "description": "A single emoji",
+              "maxLength": 20,
+              "pattern": "\\p{Extended_Pictographic}"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyCommentReaction.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/records/{recordId}/notes": {
+      "get": {
+        "operationId": "getNotes",
+        "summary": "Get Notes",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetNotes.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "post": {
+        "operationId": "postNote",
+        "summary": "Post Note",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostNote.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/records/{recordId}/notes": {
+      "get": {
+        "operationId": "getNotesWorkspace",
+        "summary": "Get Notes for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetNotes.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "post": {
+        "operationId": "postNoteWorkspace",
+        "summary": "Post Note for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostNote.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/records/{recordId}/notes/{noteId}": {
+      "get": {
+        "operationId": "getNote",
+        "summary": "Get Note",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "noteId",
+            "schema": {
+              "title": "Note Id",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetNote.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteNote",
+        "summary": "Delete Note",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "noteId",
+            "schema": {
+              "title": "Ulid",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteNote.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "put": {
+        "operationId": "putNote",
+        "summary": "Put Note",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "noteId",
+            "schema": {
+              "title": "Ulid",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutNote.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/records/{recordId}/notes/{noteId}": {
+      "get": {
+        "operationId": "getNoteWorkspace",
+        "summary": "Get Note in workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "noteId",
+            "schema": {
+              "title": "Note Id",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetNote.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteNoteWorkspace",
+        "summary": "Delete Note in workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "noteId",
+            "schema": {
+              "title": "Ulid",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteNote.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "put": {
+        "operationId": "putNoteWorkspace",
+        "summary": "Put Note in workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "noteId",
+            "schema": {
+              "title": "Ulid",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutNote.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/records/{recordId}/notes/{noteId}/reactions/me/{emoji}": {
+      "put": {
+        "operationId": "putMyNoteReaction",
+        "summary": "Put my reaction to a note",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "noteId",
+            "schema": {
+              "title": "Note Id",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "emoji",
+            "schema": {
+              "type": "string",
+              "description": "A single emoji",
+              "maxLength": 20,
+              "pattern": "\\p{Extended_Pictographic}"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyNoteReaction.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteMyNoteReaction",
+        "summary": "Delete my reaction to a note",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "noteId",
+            "schema": {
+              "title": "Note Id",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "emoji",
+            "schema": {
+              "type": "string",
+              "description": "A single emoji",
+              "maxLength": 20,
+              "pattern": "\\p{Extended_Pictographic}"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyNoteReaction.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/records/{recordId}/notes/{noteId}/reactions/me/{emoji}": {
+      "put": {
+        "operationId": "putMyNoteReactionWorkspace",
+        "summary": "Put my reaction to a note for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "noteId",
+            "schema": {
+              "title": "Note Id",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "emoji",
+            "schema": {
+              "type": "string",
+              "description": "A single emoji",
+              "maxLength": 20,
+              "pattern": "\\p{Extended_Pictographic}"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyNoteReaction.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteMyNoteReactionWorkspace",
+        "summary": "Delete my reaction to a note for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "noteId",
+            "schema": {
+              "title": "Note Id",
+              "description": "Universally Unique Lexicographically Sortable Identifier",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "emoji",
+            "schema": {
+              "type": "string",
+              "description": "A single emoji",
+              "maxLength": 20,
+              "pattern": "\\p{Extended_Pictographic}"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyNoteReaction.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/charts": {
+      "get": {
+        "operationId": "getCharts",
+        "summary": "Get Charts data by IDs",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "schema": {
+              "title": "List of ids",
+              "description": "Only 40 ids can be requested at a time",
+              "type": "string",
+              "pattern": "^[0-9]*(,[0-9]*){0,39}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetCharts.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/charts/preview": {
+      "post": {
+        "operationId": "postChartPreview",
+        "summary": "Get preview of the chart's data",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostChartPreview.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/associations/{record1Id}/{record2Id}/associate/{objectAssociationId}": {
+      "put": {
+        "operationId": "putRecordAssociation",
+        "summary": "Create Record Association",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutRecordAssociation.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteRecordAssociation",
+        "summary": "Delete Record Association",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteRecordAssociation.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/associations/{record1Id}/{record2Id}/associate/{objectAssociationId}": {
+      "put": {
+        "operationId": "putRecordAssociationWorkspace",
+        "summary": "Create Record Association for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutRecordAssociation.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteRecordAssociationWorkspace",
+        "summary": "Delete Record Association for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteRecordAssociation.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/associations": {
+      "put": {
+        "operationId": "putRecordAssociations",
+        "summary": "Create Record Associations",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutRecordAssociations.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/associations": {
+      "put": {
+        "operationId": "putRecordAssociationsWorkspace",
+        "summary": "Create Record Associations for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutRecordAssociations.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/leads/{recordId}/convert": {
+      "post": {
+        "operationId": "convertLead",
+        "summary": "Convert lead",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostLeadConvert.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/docs/{recordId}/convert/to/assets/pdf": {
+      "post": {
+        "operationId": "postDocConvertToPdfAsset",
+        "summary": "Create Pdf Asset from Doc",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostDocConvertToPdfAsset.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/docs/{recordId}/convert/to/assets/pdf": {
+      "post": {
+        "operationId": "postDocConvertToPdfAssetWorkspace",
+        "summary": "Create Pdf Asset from Doc for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostDocConvertToPdfAsset.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/conferences/{meetingRecordId}/live-participants": {
+      "get": {
+        "operationId": "LiveParticipants",
+        "summary": "Get live participants in a meeting",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "meetingRecordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetConferenceLiveParticipants.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/conferences/users": {
+      "get": {
+        "operationId": "conferenceUsers",
+        "summary": "Get User records for the given participant identities",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "identities",
+            "schema": {
+              "title": "Comma-delimited Participant Identities",
+              "description": "Comma-delimited Participant Identities",
+              "type": "string",
+              "pattern": "^([^\n ,]+(,[^\n ,]+)*)*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetConferenceUsers.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/conferences/{meetingRecordId}/room": {
+      "get": {
+        "operationId": "getConferenceRoom",
+        "summary": "Get roomId and access token for conference",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "meetingRecordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetConferenceRoom.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/conferences/{meetingRecordId}/recording-status/{enabled}": {
+      "post": {
+        "operationId": "UpdateRecordingStatus",
+        "summary": "Update recording status",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "meetingRecordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostConferenceRecordingStatus.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/conferences/{meetingRecordId}/chat-messages": {
+      "get": {
+        "operationId": "getChatMessages",
+        "summary": "Get chat messages",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "meetingRecordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetChatMessages.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "post": {
+        "operationId": "postChatMessage",
+        "summary": "Post Chat Message",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "meetingRecordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostChatMessage.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/media/convert/html/to/pdf": {
+      "post": {
+        "operationId": "convertHtmlToPdf",
+        "summary": "Return Pdf Signed URL for provided HTML",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostConvertHtmlToPdf.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/files/{fileId}": {
+      "get": {
+        "operationId": "Get File Data",
+        "summary": "Get information about file",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "fileId",
+            "schema": {
+              "title": "Id Path Parameter",
+              "description": "Unique system identifier",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetFile.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/files": {
+      "post": {
+        "operationId": "Start File Upload",
+        "summary": "Create a file and receive a signed URL for uploading content",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostFile.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/mfa": {
+      "post": {
+        "operationId": "mfa",
+        "summary": "Configure MFA",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostMyMfa.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/app-state": {
+      "get": {
+        "operationId": "getMyAppState",
+        "summary": "Get My App State",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyAppState.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "patch": {
+        "operationId": "patchMyAppState",
+        "summary": "Update My App State",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchMyAppState.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/preferences": {
+      "get": {
+        "operationId": "getMyPreferences",
+        "summary": "Get My Preferences",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyPreferences.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "patch": {
+        "operationId": "patchMyPreferences",
+        "summary": "Update My Preferences",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchMyPreferences.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteMyPreferences",
+        "summary": "Delete My Preferences",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyPreferences.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/bookmarks": {
+      "get": {
+        "operationId": "getMyBookmarks",
+        "summary": "Get My Bookmarks",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyBookmarks.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "post": {
+        "operationId": "postMyBookmark",
+        "summary": "Create Bookmark",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostMyBookmark.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/bookmarks/{bookmarkId}": {
+      "get": {
+        "operationId": "getMyBookmark",
+        "summary": "Get My Bookmark",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "bookmarkId",
+            "schema": {
+              "title": "Bookmark ID",
+              "type": "string",
+              "nullable": false,
+              "minLength": 1,
+              "maxLength": 10000,
+              "description": "Unique ID for bookmark"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyBookmark.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "put": {
+        "operationId": "putMyBookmark",
+        "summary": "Put Bookmark",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "bookmarkId",
+            "schema": {
+              "title": "Bookmark ID",
+              "type": "string",
+              "nullable": false,
+              "minLength": 1,
+              "maxLength": 10000,
+              "description": "Unique ID for bookmark"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyBookmark.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteMyBookmark",
+        "summary": "Delete Bookmark",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "bookmarkId",
+            "schema": {
+              "title": "Bookmark ID",
+              "type": "string",
+              "nullable": false,
+              "minLength": 1,
+              "maxLength": 10000,
+              "description": "Unique ID for bookmark"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyBookmark.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/records/favorites": {
+      "get": {
+        "operationId": "getFavorites",
+        "summary": "Get Favorites",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyFavorites.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteFavorites",
+        "summary": "Delete Favorites",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "schema": {
+              "title": "List of ids",
+              "description": "Only 40 ids can be requested at a time",
+              "type": "string",
+              "pattern": "^[0-9]*(,[0-9]*){0,39}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyFavorites.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/records/favorites/{recordId}": {
+      "put": {
+        "operationId": "putFavorite",
+        "summary": "Put Favorite",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyFavorite.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteFavorite",
+        "summary": "Delete Favorite",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyFavorite.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "workspaces/{workspaceId}/me/records/favorites/{recordId}": {
+      "put": {
+        "operationId": "putFavoriteWorkspace",
+        "summary": "Put Favorite for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyFavorite.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteFavoriteWorkspace",
+        "summary": "Delete Favorite for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyFavorite.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/records/favorites/batch": {
+      "put": {
+        "operationId": "putFavorites",
+        "summary": "Put Favorites",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyFavorites.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "workspaces/{workspaceId}/me/records/favorites/batch": {
+      "put": {
+        "operationId": "putFavoritesWorkspace",
+        "summary": "Put Favorites for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyFavorites.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/objects": {
+      "get": {
+        "operationId": "getObjects",
+        "summary": "Get Objects",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "schema": {
+              "title": "List of ids",
+              "description": "Only 40 ids can be requested at a time",
+              "type": "string",
+              "pattern": "^[0-9]*(,[0-9]*){0,39}$"
+            }
+          },
+          {
+            "in": "query",
+            "name": "deleted",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ],
+              "title": "SDObject Deleted",
+              "description": "Indicates if the SDObject has been deleted.  Defaults to false."
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetObjects.Alias}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "post": {
+        "operationId": "postObject",
+        "summary": "Create Object",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostObject.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/objects/{objectId}": {
+      "get": {
+        "operationId": "getObject",
+        "summary": "Get Object",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "objectId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetObject.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteObject",
+        "summary": "Delete Object",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "objectId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteObject.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/objects/{objectId}/versions/{version}": {
+      "put": {
+        "operationId": "putObject",
+        "summary": "Updated Object",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "objectId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "version",
+            "schema": {
+              "title": "SDObject Version",
+              "description": "Used to identify dirty writes",
+              "type": "string",
+              "pattern": "^[1-9][0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutObject.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/objects/{objectId}/associations": {
+      "get": {
+        "operationId": "getObjectAssociations",
+        "summary": "Get Object Associations",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "objectId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetObjectAssociations.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/records": {
+      "post": {
+        "operationId": "postRecordWorkspace",
+        "summary": "Create Record for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostRecord.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteRecordsWorkspace",
+        "summary": "Delete Records for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ids",
+            "schema": {
+              "title": "List of ids",
+              "description": "Only 20 ids can be requested at a time",
+              "type": "string",
+              "pattern": "^[0-9]*(,[0-9]*){0,19}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteRecords.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/records": {
+      "get": {
+        "operationId": "getRecords",
+        "summary": "Get Records",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "schema": {
+              "title": "List of ids",
+              "description": "Only 40 ids can be requested at a time",
+              "type": "string",
+              "pattern": "^[0-9]*(,[0-9]*){0,39}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetRecords.Alias}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "post": {
+        "operationId": "postRecord",
+        "summary": "Create Record",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostRecord.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteRecords",
+        "summary": "Delete Records",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "schema": {
+              "title": "List of ids",
+              "description": "Only 20 ids can be requested at a time",
+              "type": "string",
+              "pattern": "^[0-9]*(,[0-9]*){0,19}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteRecords.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/records/{recordId}": {
+      "get": {
+        "operationId": "getRecord",
+        "summary": "Get Record",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetRecord.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "patch": {
+        "operationId": "patchRecord",
+        "summary": "Patch Record",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchRecord.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteRecord",
+        "summary": "Delete Record",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteRecord.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/records/{recordId}": {
+      "patch": {
+        "operationId": "patchRecordWorkspace",
+        "summary": "Patch Record for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchRecord.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteRecordWorkspacee",
+        "summary": "Delete Record for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteRecord.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/records/{recordId}/duplicate": {
+      "post": {
+        "operationId": "postRecordDuplicate",
+        "summary": "Duplicate a record",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostRecordDuplicate.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/records/{recordId}/duplicate": {
+      "post": {
+        "operationId": "postRecordDuplicateWorkspace",
+        "summary": "Duplicate a record for workspace",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostRecordDuplicate.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/records/batch": {
+      "post": {
+        "operationId": "postRecords",
+        "summary": "Create Records",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostRecords.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "patch": {
+        "operationId": "patchRecords",
+        "summary": "Patch Records",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchRecords.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/records/batch": {
+      "post": {
+        "operationId": "postRecordsWorkspace",
+        "summary": "Create Records for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostRecords.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "patch": {
+        "operationId": "patchRecordsWorkspace",
+        "summary": "Patch Records for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchRecords.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/records/{recordId}/authorized-users": {
+      "get": {
+        "operationId": "getRecordAuthorizedUsers",
+        "summary": "Get the list of User SDRecords that are authorized to view the SDRecord",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetRecordAuthorizedUsers.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/records/search": {
+      "post": {
+        "operationId": "searchRecords",
+        "summary": "Search Records",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${SearchRecords.Alias}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/records/associations/search": {
+      "post": {
+        "operationId": "searchRecordsAssociationsSummary",
+        "summary": "Search associations",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${SearchAssociations.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/records/associations/search": {
+      "post": {
+        "operationId": "searchRecordsAssociationsSummaryWorkspace",
+        "summary": "Search associations for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${SearchAssociations.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "records/{recordId}/shared/workspaces/{workspaceId}": {
+      "put": {
+        "operationId": "putSharedWorkspaceRecord",
+        "summary": "Share a workspace record",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutSharedWorkspaceRecord.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteSharedWorkspaceRecord",
+        "summary": "Stop sharing a workspace record",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteSharedWorkspaceRecord.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "records/batch/shared/workspaces/{workspaceId}": {
+      "put": {
+        "operationId": "putSharedWorkspaceRecords",
+        "summary": "Share workspace records",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutSharedWorkspaceRecords.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/records/watches": {
+      "get": {
+        "operationId": "getWatches",
+        "summary": "Get Watches",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyWatches.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteWatches",
+        "summary": "Delete Watches",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "schema": {
+              "title": "List of ids",
+              "description": "Only 40 ids can be requested at a time",
+              "type": "string",
+              "pattern": "^[0-9]*(,[0-9]*){0,39}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyWatches.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/me/records/watches": {
+      "delete": {
+        "operationId": "deleteWatchesWorkspace",
+        "summary": "Delete Watches for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ids",
+            "schema": {
+              "title": "List of ids",
+              "description": "Only 40 ids can be requested at a time",
+              "type": "string",
+              "pattern": "^[0-9]*(,[0-9]*){0,39}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyWatches.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/records/watches/{recordId}": {
+      "get": {
+        "operationId": "getWatch",
+        "summary": "Get Watch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyWatch.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "put": {
+        "operationId": "putWatch",
+        "summary": "Add Watch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyWatch.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteWatch",
+        "summary": "Delete Watch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyWatch.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/me/records/watches/{recordId}": {
+      "put": {
+        "operationId": "putWatchWorkspace",
+        "summary": "Add Watch for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyWatch.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteWatchWorkspace",
+        "summary": "Delete Watch for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "recordId",
+            "schema": {
+              "title": "SDObject Id",
+              "description": "Unique system identifier for SDObjects",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyWatch.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/records/watches/batch": {
+      "put": {
+        "operationId": "putWatches",
+        "summary": "Put Watches",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyWatches.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/me/records/watches/batch": {
+      "put": {
+        "operationId": "putWatchesForWorkspace",
+        "summary": "Put Watches For Workspace",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyWatches.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "me/notifications/settings/rules": {
+      "get": {
+        "operationId": "GetMyNotificationRules",
+        "summary": "Get my notifications rules",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyNotificationRules.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "post": {
+        "operationId": "postMyNotificationRule",
+        "summary": "Create Notification Rule",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostMyNotificationRule.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/notifications/settings/rules/{ruleId}": {
+      "put": {
+        "operationId": "putMyNotificationRule",
+        "summary": "Put my Notification Rule",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ruleId",
+            "schema": {
+              "title": "Notification Rule Id",
+              "description": "Unique system identifier for Notification Rules",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyNotificationRule.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteMyNotificationRule",
+        "summary": "Delete My Notification Rule",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ruleId",
+            "schema": {
+              "title": "Notification Rule Id",
+              "description": "Unique system identifier for Notification Rules",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyNotificationRule.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/notifications": {
+      "get": {
+        "operationId": "GetMyNotifications",
+        "summary": "Get my notifications",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyNotifications.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/notifications/read": {
+      "put": {
+        "operationId": "MarkMyNotificationsRead",
+        "summary": "Mark my notifications as read",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyNotificationsRead.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/notifications/unread": {
+      "get": {
+        "operationId": "GetMyUnreadNotifications",
+        "summary": "Get my unread notifications",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyUnreadNotifications.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "put": {
+        "operationId": "MarkMyNotificationsUnread",
+        "summary": "Mark my notifications as unread",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PutMyNotificationsUnread.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/notifications/new/count": {
+      "get": {
+        "operationId": "GetMyNewNotificationsCount",
+        "summary": "Get my new notifications count",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyNewNotificationsCount.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/notifications/new/count/reset": {
+      "put": {
+        "operationId": "ResetMyNewNotificationsCount",
+        "summary": "Reset my new notifications count",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${ResetMyNewNotificationsCount.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/events": {
+      "get": {
+        "operationId": "Get Events",
+        "summary": "Get History",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetEvents.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "post": {
+        "operationId": "events",
+        "summary": "Post Events",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostEvent.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "workspaces/{workspaceId}/events": {
+      "get": {
+        "operationId": "Get Events Workspace",
+        "summary": "Get History for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetEvents.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "post": {
+        "operationId": "PostEventsWorkspace",
+        "summary": "Post Events for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostEvent.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/events/summary": {
+      "get": {
+        "operationId": "getEventsSummary",
+        "summary": "Get Events Summary",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetEventsSummary.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/events/summary": {
+      "get": {
+        "operationId": "getEventsSummaryWorkspace",
+        "summary": "Get Events Summary for workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetEventsSummary.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/users/grant-access": {
+      "post": {
+        "operationId": "grantAccess",
+        "summary": "Grant access",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostGrantUserAccess.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/settings": {
+      "get": {
+        "operationId": "getTenantSettings",
+        "summary": "Get Tenant Settings",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetTenantSettings.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "patch": {
+        "operationId": "patchTenantSettings",
+        "summary": "Update Tenant Settings",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchTenantSettings.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/imports": {
+      "post": {
+        "operationId": "postImport",
+        "summary": "Post Import",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostImport.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/imports/{importId}/mappings": {
+      "get": {
+        "operationId": "getImportMappings",
+        "summary": "Get mappings for an Import",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "importId",
+            "schema": {
+              "title": "Import Id",
+              "description": "Unique system identifier for Imports",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetImportMappings.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/imports/{importId}/jobs": {
+      "post": {
+        "operationId": "postImportJobalidation",
+        "summary": "Starts an import job",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "importId",
+            "schema": {
+              "title": "Import Id",
+              "description": "Unique system identifier for Imports",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostImportJob.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/imports/{importId}/jobs/{jobId}": {
+      "get": {
+        "operationId": "getImportJob",
+        "summary": "Get an Import Job",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "importId",
+            "schema": {
+              "title": "Import Id",
+              "description": "Unique system identifier for Imports",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "jobId",
+            "schema": {
+              "title": "Import Job Id",
+              "description": "Unique system identifier for Import Jobs",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetImportJob.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/imports/jobs/{objectId}/status/{status}": {
+      "get": {
+        "operationId": "getMyImportJobs",
+        "summary": "Get My Import Jobs",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "objectId",
+            "schema": {
+              "title": "Id Path Parameter",
+              "description": "Unique system identifier",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "status",
+            "schema": {
+              "title": "ImportJobStatus",
+              "description": "Indicates the state that the import job is in",
+              "type": "string",
+              "enum": [
+                "Created",
+                "Running",
+                "Failed",
+                "Completed"
+              ],
+              "nullable": false
+            }
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "schema": {
+              "title": "Search Size",
+              "description": "The number of import jobs to return in the search",
+              "type": "string",
+              "pattern": "^([1-9]|[1-9][0-9]|100)$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "searchAfter",
+            "schema": {
+              "title": "Search After",
+              "description": "Add the searchAfter result from a previous query to an identical query to get the next set of results",
+              "type": "string",
+              "pattern": "^([|\\-\\w\\d]*)$",
+              "nullable": false
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyImportJobs.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/imports/jobs/{objectId}": {
+      "get": {
+        "operationId": "getMyImportJobs",
+        "summary": "Get My Import Jobs",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "objectId",
+            "schema": {
+              "title": "Id Path Parameter",
+              "description": "Unique system identifier",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "schema": {
+              "title": "Search Size",
+              "description": "The number of import jobs to return in the search",
+              "type": "string",
+              "pattern": "^([1-9]|[1-9][0-9]|100)$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "searchAfter",
+            "schema": {
+              "title": "Search After",
+              "description": "Add the searchAfter result from a previous query to an identical query to get the next set of results",
+              "type": "string",
+              "pattern": "^([|\\-\\w\\d]*)$",
+              "nullable": false
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyImportJobs.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/imports/{importId}/preview": {
+      "post": {
+        "operationId": "postGetImportPreview",
+        "summary": "Get example records that would be create/updated for the import",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "importId",
+            "schema": {
+              "title": "Import Id",
+              "description": "Unique system identifier for Imports",
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{26}$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostGetImportPreview.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/apiKeys": {
+      "get": {
+        "operationId": "getMyApiKeys",
+        "summary": "Returns the authenticated user's list of API keys",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyApiKeys.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "post": {
+        "operationId": "postMyApiKey",
+        "summary": "Create a SalesDesk API key",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostMyApiKey.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/apiKeys/{apiKeyId}": {
+      "patch": {
+        "operationId": "patchMyAPIKey",
+        "summary": "Patch API Key",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiKeyId",
+            "schema": {
+              "title": "Role Id",
+              "description": "Unique system identifier for Roles",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchMyApiKey.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteMyApiKey",
+        "summary": "Delete API Key",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiKeyId",
+            "schema": {
+              "title": "API Key ID",
+              "description": "API Key ID",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyApiKey.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/me/google/auth": {
+      "get": {
+        "operationId": "getMyGoogleAccessToken",
+        "summary": "Get access token for Google integration",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetMyGoogleAccessToken.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "delete": {
+        "operationId": "deleteMyGoogleLogin",
+        "summary": "Log out of Google",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteMyGoogleLogin.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/zapier/subscriber/events": {
+      "get": {
+        "operationId": "getZapierEvents",
+        "summary": "Returns example events for Zapier",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetZapierEvents.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/zapier/notification-rules": {
+      "get": {
+        "operationId": "getZapierEvents",
+        "summary": "Returns example events for Zapier",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetZapierNotificationRules.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/zapier/subscriber/events/subscribe": {
+      "post": {
+        "operationId": "postZapierSubscribe",
+        "summary": "When Zapier subscribes to a notification rule",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostZapierSubscribe.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/zapier/subscriber/events/unsubscribe": {
+      "post": {
+        "operationId": "postZapierUnsubscribe",
+        "summary": "When Zapier unsubscribes from a notification rule",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostZapierUnsubscribe.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/subscription-plans": {
+      "get": {
+        "operationId": "getSubscriptionPlans",
+        "summary": "Get Subscription Plans",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetSubscriptionPlans.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/tenant/subscription": {
+      "get": {
+        "operationId": "getTenantSubscription",
+        "summary": "Gets the tenant subscription",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetTenantSubscription.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/tenant/quotas/{quotaId}/utilizations/{periodId}": {
+      "get": {
+        "operationId": "getTenantQuotaUtilization",
+        "summary": "Gets the quota utilization for a specific quota",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetTenantQuotaUtilization.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/customers/{emailAddress}": {
+      "get": {
+        "operationId": "getCustomerExists",
+        "summary": "Gets whether an email address corresponds to an existing customer",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetCustomerExists.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/customers": {
+      "post": {
+        "operationId": "PostAddCustomerToWorkspace",
+        "summary": "Add customer to workspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "schema": {
+              "title": "SDRecord Id",
+              "description": "Unique system identifier for SDRecords",
+              "type": "string",
+              "pattern": "^[0-9]*$"
+            }
+          }
+        ],
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostAddCustomerToWorkspace.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/customers/{customerId}": {
+      "delete": {
+        "operationId": "deleteCustomerFromWorkspace",
+        "summary": "Remove customer from workspace",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DeleteCustomerFromWorkspace.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    },
+    "/ai-agent/settings": {
+      "get": {
+        "operationId": "getAIAgentSettings",
+        "summary": "Get AI Agent Settings",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetAIAgentSettings.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      },
+      "patch": {
+        "operationId": "patchAIAgentSettings",
+        "summary": "Update AI Agent Settings",
+        "responses": {},
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST",
+          "uri": {
+            "Fn::Sub": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PatchAIAgentSettings.Arn}/invocations"
+          },
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}
